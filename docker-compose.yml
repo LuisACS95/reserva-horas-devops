@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  web-reserva:
+    build: .
+    container_name: app_reserva_medica
+    ports:
+      - "${PORT:-8080}:80"
+    restart: always
+    environment:
+      - ENTORNO=${ENTORNO:-produccion}
